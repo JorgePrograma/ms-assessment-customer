@@ -1,5 +1,3 @@
-"""Request DTOs: the only fields a client is allowed to send."""
-
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 from app.domain.entities import CustomerStatus

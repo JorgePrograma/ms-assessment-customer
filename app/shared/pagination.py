@@ -1,5 +1,3 @@
-"""Pagination value objects, usable from any layer (pure Python)."""
-
 from dataclasses import dataclass
 from math import ceil
 

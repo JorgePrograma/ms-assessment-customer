@@ -12,8 +12,6 @@ class DailyRegistrations:
 
 @dataclass(frozen=True, slots=True)
 class CustomerSummary:
-    """Aggregated view of the customer base for the dashboard."""
-
     total: int
     by_status: dict[CustomerStatus, int]
     registrations: list[DailyRegistrations]

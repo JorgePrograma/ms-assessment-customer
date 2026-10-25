@@ -1,5 +1,3 @@
-"""Translates domain entities into response DTOs, field by field."""
-
 from app.domain.entities import Customer, CustomerSummary
 from app.presentation.dtos import CustomerResponse, CustomerSummaryResponse, DailyRegistrationsResponse
 

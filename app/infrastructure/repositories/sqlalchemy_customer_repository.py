@@ -28,8 +28,6 @@ def _build_conditions(filters: CustomerFilters) -> list[ColumnElement[bool]]:
 
 
 class SqlAlchemyCustomerRepository(CustomerRepository):
-    """Adapter: implements the domain repository port on top of SQLAlchemy (PostgreSQL in production)."""
-
     def __init__(self, session: Session) -> None:
         self._session = session
 

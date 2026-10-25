@@ -1,6 +1,3 @@
-"""Business errors. Each one carries a stable `code` and the HTTP `status_code` it maps to,
-so the error handler never needs to know the concrete error types."""
-
 from http import HTTPStatus
 from uuid import UUID
 

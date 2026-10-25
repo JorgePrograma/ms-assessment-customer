@@ -20,7 +20,6 @@ class Customer:
 
     @classmethod
     def register(cls, name: str, email: str) -> Customer:
-        """Business rule: every new customer starts as PENDING."""
         return cls(name=name.strip(), email=email.strip().lower(), status=CustomerStatus.PENDING)
 
     def change_status(self, new_status: CustomerStatus) -> None:

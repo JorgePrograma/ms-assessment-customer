@@ -17,7 +17,6 @@ _VALID_REQUEST_ID = re.compile(r"^[A-Za-z0-9._-]{1,64}$")
 
 
 async def request_context_middleware(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
-    """Assigns a request id, logs the request outcome and turns unexpected errors into a 500 envelope."""
     incoming_id = request.headers.get(REQUEST_ID_HEADER, "")
     request_id = incoming_id if _VALID_REQUEST_ID.match(incoming_id) else uuid4().hex
     token = request_id_ctx.set(request_id)

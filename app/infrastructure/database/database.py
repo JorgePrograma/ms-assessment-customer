@@ -15,8 +15,6 @@ class Base(DeclarativeBase):
 
 
 class Database:
-    """Owns the process-wide Engine (and its connection pool) and hands out short-lived Sessions."""
-
     _instance: Database | None = None
     _lock = Lock()
 
@@ -26,7 +24,6 @@ class Database:
 
     @classmethod
     def instance(cls) -> Database:
-        """Lazily creates the singleton; double-checked locking keeps it safe across worker threads."""
         if cls._instance is None:
             with cls._lock:
                 if cls._instance is None:
@@ -48,7 +45,6 @@ class Database:
 
 
 def get_db() -> Iterator[Session]:
-    """One Session per request, always closed (returning its connection to the pool)."""
     session = Database.instance().session()
     try:
         yield session

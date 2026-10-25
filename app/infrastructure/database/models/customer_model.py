@@ -9,8 +9,6 @@ from app.infrastructure.database.database import Base
 
 
 class CustomerModel(Base):
-    """Persistence model (SQLAlchemy ORM). Maps the `customers` table."""
-
     __tablename__ = "customers"
 
     id: Mapped[UUID] = mapped_column(Uuid, primary_key=True)

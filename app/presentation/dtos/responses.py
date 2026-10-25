@@ -1,5 +1,3 @@
-"""Response DTOs: the only customer data the API exposes; the entity is never serialized directly."""
-
 import datetime as dt
 from typing import Literal
 from uuid import UUID

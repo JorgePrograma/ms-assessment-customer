@@ -1,10 +1,3 @@
-"""Loads demo customers through the use cases, so every business rule applies.
-
-Usage:  python -m scripts.seed            (local)
-        docker compose exec api python -m scripts.seed
-Idempotent: customers whose email already exists are skipped.
-"""
-
 import logging
 from datetime import UTC, datetime, timedelta
 from uuid import UUID
@@ -51,10 +44,6 @@ DEMO_CUSTOMERS: list[tuple[str, str, CustomerStatus]] = [
 
 
 def _backdate(session: Session, customer_id: UUID, created_at: datetime) -> None:
-    """Demo-only: spreads registrations over the last weeks so the dashboard chart has history.
-
-    `created_at` is immutable for the API, so this writes the ORM model directly.
-    """
     model = session.get(CustomerModel, customer_id)
     if model is not None:
         model.created_at = created_at

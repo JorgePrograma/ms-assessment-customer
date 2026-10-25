@@ -1,5 +1,3 @@
-"""Translates between the persistence model (SQLAlchemy) and the domain entity."""
-
 from app.domain.entities import Customer
 from app.infrastructure.database.models import CustomerModel
 from app.shared.utils import as_utc

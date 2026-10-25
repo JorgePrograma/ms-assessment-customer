@@ -1,5 +1,3 @@
-"""One class per business operation; each depends only on domain ports, never on infrastructure."""
-
 from app.application.use_cases.create_customer import CreateCustomerUseCase
 from app.application.use_cases.get_customer import GetCustomerUseCase
 from app.application.use_cases.get_customers_summary import GetCustomersSummaryUseCase

@@ -7,7 +7,6 @@ LOG_FORMAT = "%(asctime)s %(levelname)-8s [%(request_id)s] %(name)s - %(message)
 
 
 def _install_request_id_record_factory() -> None:
-    """Stamps every log record with the current request id, whichever handler ends up emitting it."""
     base_factory = logging.getLogRecordFactory()
     if getattr(base_factory, "adds_request_id", False):
         return
@@ -21,8 +20,7 @@ def _install_request_id_record_factory() -> None:
     logging.setLogRecordFactory(factory)
 
 
-class _AppHandler(logging.StreamHandler):
-    """Marker type so reconfiguring replaces only our handler and leaves third-party ones alone."""
+class _AppHandler(logging.StreamHandler): ...
 
 
 def configure_logging(level: str) -> None:

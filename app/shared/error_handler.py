@@ -1,5 +1,3 @@
-"""Turns every failure into the standard error envelope."""
-
 import logging
 from http import HTTPStatus
 
@@ -13,7 +11,6 @@ from app.shared.api_response import ErrorBody, ErrorDetail, ErrorResponse
 
 logger = logging.getLogger(__name__)
 
-# Location prefixes FastAPI adds to validation errors; the client only needs the field name.
 _REQUEST_PARTS = {"body", "query", "path", "header", "cookie"}
 
 

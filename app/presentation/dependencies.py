@@ -1,5 +1,3 @@
-"""Composition root: the only place that knows which adapter implements each port."""
-
 from typing import Annotated
 
 from fastapi import Depends

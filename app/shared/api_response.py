@@ -1,5 +1,3 @@
-"""Standard response envelope shared by every endpoint (see specs/customers.spec.md §3)."""
-
 from collections.abc import Callable
 from typing import Literal
 

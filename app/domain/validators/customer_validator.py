@@ -1,8 +1,3 @@
-"""Business invariants of a customer, enforced for every entry point (HTTP, scripts, future consumers).
-
-The HTTP layer validates the request shape first; this guarantees the rules even without it.
-"""
-
 import re
 
 from app.domain.errors import ValidationError

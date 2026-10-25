@@ -11,7 +11,6 @@ class GetCustomersSummaryUseCase:
         self._repository = repository
 
     def execute(self, days: int = 14, now: datetime | None = None) -> CustomerSummary:
-        """Totals per status plus daily registrations (UTC days) for the last `days` days, zero-filled."""
         today = (now or datetime.now(UTC)).astimezone(UTC).date()
         first_day = today - timedelta(days=days - 1)
 

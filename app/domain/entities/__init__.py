@@ -1,5 +1,3 @@
-"""Business entities. Pure Python: no FastAPI, no SQLAlchemy, no Pydantic."""
-
 from app.domain.entities.customer import Customer, CustomerStatus
 from app.domain.entities.filters import CustomerFilters
 from app.domain.entities.summary import CustomerSummary, DailyRegistrations
